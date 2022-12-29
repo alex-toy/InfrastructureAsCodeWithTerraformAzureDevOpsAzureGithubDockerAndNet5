@@ -1,0 +1,15 @@
+services:
+  sampleapi:
+    build:
+      context: C:\source\AzureDevops\InfrastructureAsCodeWithTerraformAzureDevOpsAzureGithubDockerAndNet5\SampleAPI
+      dockerfile: SampleAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: sampleapi
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\alexe\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+version: '3.4'

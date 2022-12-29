@@ -1,6 +1,6 @@
 # Infrastructure As Code With Terraform Azure DevOps Azure Github Docker And Net5
 
-In this projectn, we will be going through IaC with terraform and Azure DevOps. 
+In this project, we will be going through IaC with terraform and Azure DevOps. 
 
 
 ## Create project
@@ -8,15 +8,21 @@ In this projectn, we will be going through IaC with terraform and Azure DevOps.
 <img src="/pictures/create_project.png" title="create project"  width="800">
 
 
-
-
-
-### Package Manager Command in **AzureBlobStorage**
+### Create Dockerfile
 ```
-Install-Package Azure.Storage.Blobs
+docker build -t alex/sampleapi . 
+docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml down
+docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+```
+- go to *SampleAPI* : http://localhost:8081/swagger/index.html
+
+
+### Push local image to Dockerhub
+```
+docker tag sampleapi dockeralexei/sampleapi:version1
+docker push dockeralexei/sampleapi:version1
 ```
 
-### Create Storage Account
+<img src="/pictures/docker_push.png" title="docker push"  width="800">
 
-<img src="/pictures/containers.png" title="containers"  width="800">
-<img src="/pictures/connection_strings.png" title="connection strings"  width="600">
+
