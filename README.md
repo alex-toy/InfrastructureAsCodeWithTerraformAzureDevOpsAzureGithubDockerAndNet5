@@ -26,3 +26,11 @@ docker push dockeralexei/sampleapi:version1
 <img src="/pictures/docker_push.png" title="docker push"  width="800">
 
 
+### Terraform
+```
+terraform init
+terraform plan
+terraform apply
+```
+
+
